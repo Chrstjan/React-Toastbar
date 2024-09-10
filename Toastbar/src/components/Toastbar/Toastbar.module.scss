@@ -6,4 +6,18 @@
     border: 2px solid #1c1c1c;
     text-align: center;
     line-height: 35px;
+    border-radius: 9px;
+
+    &.success {
+        background: darkgreen;
+        color: #eee;
+    }
+
+    &.warning {
+        background: yellow;
+    }
+    &.error {
+        background: red;
+        color: #eee;
+    }
 }
