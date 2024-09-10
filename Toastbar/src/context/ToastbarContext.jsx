@@ -10,13 +10,16 @@ export const ToastbarContextProvider = ({children}) => {
     const showToastbar = (type) => {
         setIsShown(true);
         setToastType(type);
-        time = setTimeout(() => {
-            setIsShown(false);
-        }, 2500);
     }
 
     useEffect(() => {
-        clearTimeout(time);
+        time = setTimeout(() => {
+            setIsShown(false);
+        }, 2500);
+
+        return () => {
+            clearTimeout(time);
+        }
     }, [isShown])
 
     return (
